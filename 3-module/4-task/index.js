@@ -10,12 +10,12 @@ function showSalary(users, age) {
   		return false
   })
 
-  let emptyString = "";
-  let str = tmp.reduce(function(previousValue, item, index, array) {
-  	emptyString += item["name"] + ", " + item["balance"] + "\n";
-  	return emptyString;
 
-  }, emptyString);
+  let str = tmp.reduce(function(sumStr, item) {
+  	sumStr += item["name"] + ", " + item["balance"] + "\n";
+  	return sumStr;
+
+  }, "");
 
 
   return str.slice(0,str.length-1);
