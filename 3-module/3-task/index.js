@@ -7,14 +7,14 @@
 
 
 function camelize(str) {
-	let foundPos = 0;
+  str = str.split("-");
 
-  while (~str.indexOf("-")) {
-  	foundPos = str.indexOf("-");
+  for (let i = 1; i < str.length; i++) { 
+    if (str[i] !== "") { 
+    str[i] = str[i][0].toUpperCase() + str[i].slice(1); 
+    }
+  }
 
-  	str = str.slice(0, foundPos) + str[foundPos + 1].toUpperCase() + str.slice(foundPos + 2); 
-  };
+  return str.join("");
+};
 
-
-  return str;
-}
