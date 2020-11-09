@@ -5,5 +5,19 @@
  * @returns {string}
  */
 function showSalary(users, age) {
-  // ваш код...
+  let tmp = users.filter(function(item,index,array) {
+  	if (item["age"] <= age) return true
+  		return false
+  })
+
+
+  let str = tmp.reduce(function(sumStr, item) {
+  	sumStr += item["name"] + ", " + item["balance"] + "\n";
+  	return sumStr;
+
+  }, "");
+
+
+  return str.slice(0, str.length-1);
 }
+
